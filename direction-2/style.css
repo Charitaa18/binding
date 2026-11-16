@@ -79,35 +79,6 @@ line-height: 0.5;
 }
 
 body {
-	/* background-image: url("images/Grid-PNG-Picture.png"); */
-		/* Image file path */
-		/* https://chatgpt.com/s/t_6af764e340148191844d8da58a467fd3 */
-		/* You have to specify which folder the image is in. Can't just link it. Tried through MDN first but couldn't figure out the problem. */
-	/* background-repeat: repeat; */
-
-	/* background: repeating-linear-gradient(
-  	#efeeed,
- 	 #a5a5a5 20px,
- 	 #000000 20px,
-  	#a5a5a5 20px
-	); */
-
-	/* background-color: rgb(245, 240, 231);
-	background-image: linear-gradient(to right, rgb(220, 220, 220) 1px, transparent 1px),
-	linear-gradient(to bottom, rgb(220,220,220) 1px, transparent 1px);
-	background-size: 2rem 2rem; */
-
-	background: repeating-linear-gradient(
-  	180deg,
-  	rgb(223, 223, 223) 0 1px,
-  	transparent 1px 1rlh),
-
-	repeating-linear-gradient(
-	90deg,
-	rgb(223, 223, 223) 0 1px,
-  	transparent 1px 1rlh
-);
-
 
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
@@ -575,5 +546,41 @@ span.author {
 		text-decoration: double underline;
 	}
 }
+
+
+	/* background-image: url("images/Grid-PNG-Picture.png"); */
+		/* Image file path */
+		/* https://chatgpt.com/s/t_6af764e340148191844d8da58a467fd3 */
+		/* You have to specify which folder the image is in. Can't just link it. Tried through MDN first but couldn't figure out the problem. */
+	/* background-repeat: repeat; */
+
+	/* background: repeating-linear-gradient(
+  	#efeeed,
+ 	 #a5a5a5 20px,
+ 	 #000000 20px,
+  	#a5a5a5 20px
+	); */
+
+	/* background-color: rgb(245, 240, 231);
+	background-image: linear-gradient(to right, rgb(220, 220, 220) 1px, transparent 1px),
+	linear-gradient(to bottom, rgb(220,220,220) 1px, transparent 1px);
+	background-size: 2rlh 2rlh; */
+
+	/* background: repeating-linear-gradient(
+  	180deg,
+  	rgb(223, 223, 223) 0 1px,
+  	transparent 1px 1rlh),
+
+	repeating-linear-gradient(
+	90deg,
+	rgb(223, 223, 223) 0 1px,
+  	transparent 1px 1rlh
+		Making a grid
+		https://chatgpt.com/s/t_6af8719eab7c8191aa394a05aeca2abd
+		Various attempts at making a grid
+
+		); */
+
+		try vertical trim
 
 
