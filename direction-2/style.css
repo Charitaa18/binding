@@ -13,7 +13,7 @@
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
 --accent-red: rgb(192, 45, 45);
---accent-green: rgb(52, 195, 52);
+/* --accent-green: rgb(52, 195, 52); */
 --highlight-yellow: rgb(235, 231, 162);
 /* TYPEFACE */
 --heading-typeface:'architects daughter',sans-serif;
@@ -57,6 +57,8 @@
 --paragraph-spacing:calc(2*var(--base-spacing));
 --section-spacing: calc(2.5*var(--paragraph-spacing));
 --content-indent: var(--paragraph-spacing);
+/* CIRCLE */
+--circle-size: 1.8em;
 /* MAXSIZE */
 --page-max-sticky:20rem;
 --page-max-phone: 50rem;
@@ -211,14 +213,11 @@ P {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	line-height: var(--relaxed);
-
-	/* @media (width > 600px) { */
-		font-size: clamp(var(--content), 2.5vw, calc(1.4 * var(--content)));
-		/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
-			/* Accessibility for text */
-			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
-			/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
-	/* } */
+	font-size: clamp(var(--content), 2.5vw, calc(1.4 * var(--content)));
+	/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
+		/* Accessibility for text */
+		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
+		/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
 
 	&.prologue {
 		color: rgb(27, 27, 28);
@@ -338,30 +337,36 @@ span.author {
 	color: var(--primary-black);
 }
 
-
-
 .section-header {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	gap: var(--paragraph-spacing);
-	align-items: baseline;
+	align-items: center;
+	justify-content: center;
 
 	.section-number {
-		font-size: calc(1.2*var(--subheading-xsm));
+		font-size: clamp(calc(var(--subheading-sm)/1.4), 6vw , var(--heading));
 		font-weight: var(--extrabold-wt);
 		grid-column: span 1;
+		min-inline-size: var(--circle-size);
+		block-size: var(--circle-size);
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1;
+			/* https://chatgpt.com/s/t_6afd2b8ce5348191ac2d910359eb8828 */
+			/* To avoid the circle changing shape as the screen gets responsive and not take up the width of the container */
 		color: var(--primary-green);
 		font-family: var(--heading-typeface);
 		border: solid black 0.2rem;
 		border-radius: 50%;
 		padding: var(--base-spacing);
-		@media (width >768px) {
-			font-size: var(--subheading-lrg);
-		}
 	}
 
 	h2 {
 		grid-column: span 6;
+		margin-block-start: 0;
+		margin-block-end: 0;
 	}
 }
 
@@ -481,6 +486,6 @@ repeating-linear-gradient(
 ); */
 
 /* try vertical trim whenever you try the ruled pages look again */
-}
+
 
 
