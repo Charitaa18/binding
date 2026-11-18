@@ -8,15 +8,19 @@
 /* COLOURS */
 --primary-black: rgb(0, 0, 0);
 --primary-white: rgb(243, 243, 243);
---primary-blue: rgb(0, 134, 146);
+--primary-blue: rgb(45, 165, 192);
 --primary-green:rgb(1, 199, 126);
---primary-purple:rgb(101, 66, 227);
+--primary-purple:rgb(179, 163, 234);
 --primary-grey:rgb(39, 38, 42);
+--primary-pink: rgb(199, 1, 133);
+--primary-orange: rgb(214, 97, 24);
+--accent2:rgb(226, 177, 0);
 --accent-red: rgb(192, 45, 45);
 --accent-pink:rgb(242, 232, 232);
 /* --accent-green: rgb(52, 195, 52); */
---stickynote:rgb(234, 227, 159);
---highlight: rgb(202, 239, 197);
+--stickynote:rgb(234, 198, 159);
+--highlight: rgb(239, 234, 197);
+
 /* TYPEFACE */
 --heading-typeface:'architects daughter',sans-serif;
 --primary-typeface:'Be Vietnam Pro',sans-serif;
@@ -71,6 +75,7 @@
 
 
 body {
+	background-repeat: repeat;
 	background-color: var(--background-opt1);
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
@@ -79,7 +84,7 @@ body {
 	font-weight: var(--regular-wt);
 	line-height: var(--relaxed);
 	margin-inline: var(--paragraph-spacing);
-	border-inline-start: solid rgb(196, 55, 55) 0.2rem;
+	border-inline-start: solid var(--accent-red) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 
 	@media (width > 768px) {
@@ -192,7 +197,7 @@ h1{
 		/* padding-inline: 0.5rem; */
 		font-family: var(--accent-typeface);
 		font-size: clamp(var(--subheading-lrg), 8vw , var(--heading-lrg));
-		color:var(--primary-green);
+		color:var(--accent2);
 		letter-spacing: 0.1em;
 		display: inline-block;
 		/* so that rotate works on an inline element */
@@ -377,7 +382,7 @@ li.reference {
 		aspect-ratio: 1;
 			/* https://chatgpt.com/s/t_6afd2b8ce5348191ac2d910359eb8828 */
 			/* To avoid the circle changing shape as the screen gets responsive and not take up the width of the container */
-		color: var(--primary-green);
+		color: var(--accent2);
 		font-family: var(--heading-typeface);
 		border: solid black 0.2rem;
 		border-radius: 50%;
@@ -401,7 +406,7 @@ li.reference {
 	font-family: var(--accent-typeface);
 
 	.note {
-		color: var(--accent-red);
+		color: var(--primary-orange);
 		font-size: var(--metadata);
 		rotate: -2.5deg;
 	}
@@ -412,21 +417,21 @@ li.reference {
 		row-gap: var(--base-spacing);
 		padding-inline: var(--paragraph-spacing);
 		padding-block:var(--paragraph-spacing);
-		border: dashed var(--accent-red) 0.1rem;
+		border: dashed var(--primary-orange) 0.1rem;
 		border-radius: 1rem;
 		font-size: var(--content);
 
 		p.design {
 			font-size: calc(1.1*var(--metadata));
-			color:var(--primary-green);
+			color:var(--accent2);
 		}
 
 		span.third {
 			margin-inline-start: var(--paragraph-spacing);
 			font-size: var(--references);
 			font-family: var(--heading-typeface);
-			color: var(--primary-green);
-			border: solid var(--primary-green) 0.1rem;
+			color: var(--accent2);
+			border: solid var(--accent2) 0.1rem;
 			border-radius: 50%;
 			padding: var(--base-spacing);
 		}
@@ -463,7 +468,7 @@ li.reference {
 
 	.sticky-label {
 		font-size: var(--metadata);
-		color: var(--accent-red);
+		color: var(--primary-orange);
 		display: inline-block;
 		rotate: -2deg;
 	}
