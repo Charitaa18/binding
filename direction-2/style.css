@@ -13,6 +13,7 @@
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
 --accent-red: rgb(192, 45, 45);
+--accent-pink:rgb(242, 232, 232);
 /* --accent-green: rgb(52, 195, 52); */
 --stickynote:rgb(234, 227, 159);
 --highlight: rgb(202, 239, 197);
@@ -64,7 +65,7 @@
 /* MAXSIZE */
 --page-max-sticky:20rem;
 --page-max-phone: 50rem;
---page-max-laptop:75rem;
+--page-max-laptop:70rem;
 }
 
 
@@ -83,7 +84,7 @@ body {
 	@media (width > 768px) {
 		margin-inline: auto;
 		padding-inline-start: var(--section-spacing);
-		max-inline-size: clamp(40rem, 90vw , 60rem);
+		max-inline-size: clamp(40rem, 90vw , var(--page-max-laptop));
 			/* Range of values between a defined minimum bound and a maximum bound. */
 			/* https://typography-interaction-2627.github.io/topic/responsive/#clamp */
 			/* setting the min, preferred value and max width of the screen respectively when the screen width goes over 768px */
@@ -96,8 +97,8 @@ nav {
 
 
 	details {
-		background-color: rgb(242, 232, 232);
-		/* margin-block-start: var(--section-spacing); */
+		background-color: var(--accent-pink);
+		/* background-color: var(--stickynote); */
 		margin-block-start: var(--section-spacing);
 		padding: var(--paragraph-spacing);
 		font-family: var(--accent-typeface);
@@ -137,6 +138,8 @@ nav {
 
 		p.tableofcontents {
 			margin: 0;
+			display: inline-block;
+			rotate: -1deg;
 		}
 
 		&[open] .triangle {
@@ -144,7 +147,7 @@ nav {
 		}
 
 	ol.toc {
-		background-color: white;
+		background-color: var(--primary-white);
 		padding: var(--paragraph-spacing);
 		border: solid rgb(206, 206, 206) 0.1rem;
 		box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/20%);
@@ -326,18 +329,25 @@ mark {
 
 #top {
 	display: block;
-	background-color: rgb(235, 231, 162);
+	background-color: var(--stickynote);
+	font-family: var(--accent-typeface);
 	font-size: var(--references);
-	padding-inline: var(--paragraph-spacing);
+	padding: var(--paragraph-spacing);
 	/* border-radius: 2rem; */
 	margin-block-start: var(--section-spacing);
 	margin-block-end: var(--section-spacing);
 	text-decoration: none;
+	font-size: clamp(var(--references), 1.5vw, var(--content));
 }
 
 span.author {
 	font-weight: var(--semibold-wt);
 	color: var(--primary-black);
+}
+
+li.reference {
+	font-size: clamp(var(--references), 1.5vw, var(--content));
+	margin-block-end: var(--base-spacing);
 }
 
 .section-header {
