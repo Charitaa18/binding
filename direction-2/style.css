@@ -1,6 +1,6 @@
 :root {
 /* BACKGROUND */
---background-opt1: rgb(236, 236, 236);
+--background-opt1: rgb(244, 244, 244);
 --background-opt2: linear-gradient(to bottom,rgb(180, 180, 180)5%, rgb(180, 180, 180) 5%, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
 	/* Positioning color stops with liner gradient */
 	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients */
@@ -14,7 +14,8 @@
 --primary-grey:rgb(39, 38, 42);
 --accent-red: rgb(192, 45, 45);
 /* --accent-green: rgb(52, 195, 52); */
---highlight-yellow: rgb(235, 231, 162);
+--stickynote:rgb(235, 202, 136);
+--highlight: rgb(194, 238, 188);
 /* TYPEFACE */
 --heading-typeface:'architects daughter',sans-serif;
 --primary-typeface:'Be Vietnam Pro',sans-serif;
@@ -58,7 +59,8 @@
 --section-spacing: calc(2.5*var(--paragraph-spacing));
 --content-indent: var(--paragraph-spacing);
 /* CIRCLE */
---circle-size: 1.8em;
+--circle-size: 1.7em;
+--circle-padding: 0.25rem;
 /* MAXSIZE */
 --page-max-sticky:20rem;
 --page-max-phone: 50rem;
@@ -67,6 +69,7 @@
 
 
 body {
+	background-color: var(--background-opt1);
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
 	margin-inline: auto;
@@ -89,12 +92,13 @@ body {
 
 nav {
 	margin-block-start: var(--paragraph-spacing);
+	margin-block-end: var(--section-spacing);
 
 
 	details {
 		background-color: rgb(242, 232, 232);
 		/* margin-block-start: var(--section-spacing); */
-		margin-block: var(--paragraph-spacing);
+		margin-block-start: var(--section-spacing);
 		padding: var(--paragraph-spacing);
 		font-family: var(--accent-typeface);
 		font-size: var(--references);
@@ -169,10 +173,9 @@ h1{
 	color: var(--primary-grey);
 	font-family:var(--primary-typeface);
 	font-weight: var(--extrabold-wt);
-	margin-block-start: var(--paragraph-spacing);
-	margin-block-end: var(--section-spacing);
+	margin-block: var(--paragraph-spacing);
 	text-transform: uppercase;
-	line-height: var(--regular);
+	line-height: var(--tight);
 
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
@@ -184,6 +187,10 @@ h1{
 		font-family: var(--accent-typeface);
 		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
 		color:var(--primary-green);
+		letter-spacing: 0.2em;
+		display: inline-block;
+		/* so that rotate works on an inline element */
+		rotate: -2deg;
 	}
 }
 
@@ -196,7 +203,7 @@ h2, h3 {
 }
 
 h2 {
-	font-size: clamp(calc(var(--subheading-sm)/1.4), 6vw , var(--heading));
+	font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
 	line-height: var(--regular);
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
@@ -260,15 +267,14 @@ a {
 
 	&.article, &.author {
 	text-decoration: none;
+	font-family: var(--primary-typeface);
 	}
 
 	&.author {
 		font-size: clamp(var(--text-md), 1.5vw , var(--metadata));
-		font-family: var(--heading-typeface);
 	}
 	&.article {
 		font-size: var(--references);
-		font-family: var(--primary-typeface);
 		text-decoration: underline;
 		display: block;
 	}
@@ -292,7 +298,7 @@ sup {
 
 time {
 
-	font-family: var(--heading-typeface);
+	font-family: var(--primary-typeface);
 	font-size: clamp(var(--text-md), 1.5vw , var(--metadata));
 
 }
@@ -312,8 +318,7 @@ mark {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	transform: rotate(9deg);
-	/* text-decoration: overline; */
-	background-color: rgb(235, 231, 162);
+	background-color: var(--highlight);
 	padding-inline: 0.1rem;
 	border-radius: 0.2rem;
 	/* filter: blur(0.2em) */
@@ -345,7 +350,7 @@ span.author {
 	justify-content: center;
 
 	.section-number {
-		font-size: clamp(calc(var(--subheading-sm)/1.4), 6vw , var(--heading));
+		font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
 		font-weight: var(--extrabold-wt);
 		grid-column: span 1;
 		min-inline-size: var(--circle-size);
@@ -363,19 +368,27 @@ span.author {
 		padding: var(--base-spacing);
 	}
 
-	h2 {
+	h2,h3 {
 		grid-column: span 6;
+	}
+
+	h2 {
 		margin-block-start: 0;
 		margin-block-end: 0;
 	}
 }
 
 .key-argument {
-
 	display:flex;
 	flex-direction: column;
 	row-gap: var(--paragraph-spacing);
 	font-family: var(--accent-typeface);
+
+	.note {
+		color: var(--accent-red);
+		font-size: var(--metadata);
+		rotate: -2.5deg;
+	}
 
 	.note-content {
 		display:flex;
@@ -383,37 +396,28 @@ span.author {
 		row-gap: var(--base-spacing);
 		padding-inline: var(--paragraph-spacing);
 		padding-block:var(--paragraph-spacing);
-		/* padding-block-end:var(--section-spacing); */
-		border: dashed rgb(192, 45, 45) 0.1rem;
+		border: dashed var(--accent-red) 0.1rem;
 		border-radius: 1rem;
 		font-size: var(--content);
-		/* background-color: white; */
-	}
 
-	span.third {
+		p.design {
+			font-size: calc(1.1*var(--metadata));
+			color:var(--primary-green);
+		}
+
+		span.third {
 			margin-inline-start: var(--paragraph-spacing);
 			font-size: var(--references);
 			font-family: var(--heading-typeface);
-			color: rgb(52, 195, 52);
-			border: solid rgb(52, 195, 52) 0.1rem;
+			color: var(--primary-green);
+			border: solid var(--primary-green) 0.1rem;
 			border-radius: 50%;
 			padding: var(--base-spacing);
-			/* display: inline-block; */
 		}
-
-	.note {
-		color: rgb(192, 45, 45);
-		font-size: var(--metadata);
-		rotate: -3deg;
 	}
 
 	p {
 		margin-block-start: 0;
-	}
-
-	p.design {
-		font-size: calc(1.1*var(--metadata));
-		color: rgb(52, 195, 52);
 	}
 }
 
@@ -421,7 +425,7 @@ span.author {
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--base-spacing);
-	background-color: rgb(243, 243, 140);
+	background-color: var(--stickynote);
 	box-shadow: 0.1rem 0.2rem 0.3rem rgb(0 0 0 / 50%);
 		/* adds shadow effects around an element's frame. */
 		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow */
