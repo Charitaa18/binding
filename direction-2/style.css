@@ -1,10 +1,7 @@
 :root {
 /* BACKGROUND */
---background-opt1:rgb(39, 38, 42);
---background-opt2:rgb(83, 8, 8);
---background-opt3: rgb(236, 236, 236);
---background-opt4: linear-gradient(to bottom,rgb(39, 38, 42)20%, rgb(67, 63, 77) 46%, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
---background-opt4: linear-gradient(to bottom,rgb(180, 180, 180)5%, rgb(180, 180, 180) 5%, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
+--background-opt1: rgb(236, 236, 236);
+--background-opt2: linear-gradient(to bottom,rgb(180, 180, 180)5%, rgb(180, 180, 180) 5%, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
 	/* Positioning color stops with liner gradient */
 	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients */
 	/* You can choose the direction of the gradient and also the percentage of space taken up by each colour.  */
@@ -15,31 +12,38 @@
 --primary-green:rgb(1, 199, 126);
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
+--accent-red: rgb(192, 45, 45);
+--accent-green: rgb(52, 195, 52);
+--highlight-yellow: rgb(235, 231, 162);
 /* TYPEFACE */
 --heading-typeface:'architects daughter',sans-serif;
---subheading-typeface: 'jost',sans-serif;
 --primary-typeface:'Be Vietnam Pro',sans-serif;
 --metadata-typeface:var(--primary-typeface);
 --accent-typeface:'Architects Daughter', cursive;
 --accent-typeface2:'Annie Use Your Telescope', cursive;
 /* TEXTSIZES */
 --basetext:0.5rem;
---text-xxtsml: calc(1.2*var(--basetext));
 --text-xsml: calc(1.8*var(--basetext));
 --text-sml:calc(2*var(--basetext));
 --text-md: calc(1.5*var(--text-sml));
 --text-lrg: calc(1.5*var(--text-md));
 --text-xlrg: calc(2*var(--text-lrg));
---text-xxlrg: calc(2.5*var(--text-xlrg));
+--text-xxlrg: calc(3*var(--text-xlrg));
 /* TEXTTYPE */
 --references: var(--text-xsml);
---content:calc(1.2*var(--text-sml));
---metadata: var(--text-md);
---subheading-xsm: var(--text-lrg);
---subheading-sm: calc(var(--text-xlrg)/1.2);
+--content: var(--text-md);
+--metadata: calc(1.2*var(--text-md));
+--subheading-xsm: var(--metadata);
+--subheading-sm: var(--tex-lrg);
 --subheading-lrg: calc(1.2* var(--subheading-sm));
---heading: var(--text-xxlrg);
---heading-lrg: calc(1.5*var(--text-xxlrg));
+--heading: var(--text-xlrg);
+--heading-lrg: var(--text-xxlrg);
+/* LEADING */
+--tight: 1;
+--regular: 1.2;
+--relaxed: 1.5;
+--open:1.8;
+--loose: 2;
 /* WEIGHT */
 --base-weight:100;
 --thin-wt: calc(1.5*var(--base-weight));
@@ -53,42 +57,20 @@
 --paragraph-spacing:calc(2*var(--base-spacing));
 --section-spacing: calc(2.5*var(--paragraph-spacing));
 --content-indent: var(--paragraph-spacing);
---content-end: var(--content-indent);
-/* LEADING */
---tight-leading: calc(2*var(--basetext));
---regular-leading: calc(2.5*var(--basetext));
---relaxed-leading: calc(2*var(--regular-leading));
---open-leading: calc(1.5*var(--relaxed-leading));
---loose-leading: calc(2*var(--relaxed-leading));
---extraloose-leading: calc(1.5*var(--loose-leading));
-/* LEADING-STYLE-2 */
---regular: 1.2;
---relaxed: 1.5;
---open: 1.8;
 /* MAXSIZE */
 --page-max-sticky:20rem;
 --page-max-phone: 50rem;
 --page-max-laptop:75rem;
-
-line-height: 0.5;
---grid: 1rlh;
---content-lh: 2rlh;
---subheading1: 3rlh;
---subheading2: 4rlh;
---heading-lh: 5rlh;
 }
 
-body {
 
+body {
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
-	margin-inline: auto;
 	font-family: var(--primary-typeface);
 	font-weight: var(--regular-wt);
-	line-height: var(--relaxed-leading);
-	margin-inline-start: var(--paragraph-spacing);
-	margin-inline-end: var(--paragraph-spacing);
-
+	line-height: var(--relaxed);
+	margin-inline: var(--paragraph-spacing);
 	border-inline-start: solid rgb(196, 55, 55) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 
@@ -103,23 +85,22 @@ body {
 
 nav {
 	margin-block-start: var(--paragraph-spacing);
-	/* margin-block-end:var(--paragraph-spacing) ; */
-}
 
-nav details {
-	background-color: rgb(242, 232, 232);
-	/* margin-block-start: var(--section-spacing); */
-	margin-block: var(--paragraph-spacing);
-	padding: var(--paragraph-spacing);
-	font-family: var(--accent-typeface);
-	font-size: var(--references);
 
-	@media (width> 768px) {
-		font-size: calc(1.5*var(--content));
-		&:hover {
-			color: var(--primary-blue);
+	nav details {
+		background-color: rgb(242, 232, 232);
+		/* margin-block-start: var(--section-spacing); */
+		margin-block: var(--paragraph-spacing);
+		padding: var(--paragraph-spacing);
+		font-family: var(--accent-typeface);
+		font-size: var(--references);
+
+		@media (width> 768px) {
+			font-size: calc(1.5*var(--content));
+			&:hover {
+				color: var(--primary-blue);
+			}
 		}
-	}
 
 	summary {
 	display: flex;
@@ -128,31 +109,31 @@ nav details {
 	align-items: center;
 	}
 
-	.triangle {
-		width: 0;
-		height: 0;
-		transform: rotate(0deg);
+		.triangle {
+			width: 0;
+			height: 0;
+			transform: rotate(0deg);
 
-		border-top-width:0.5rem ;
-		border-top-style:solid ;
-		border-top-color:transparent ;
+			border-top-width:0.5rem ;
+			border-top-style:solid ;
+			border-top-color:transparent ;
 
-		border-bottom-width: 0.5rem;
-		border-bottom-style: solid;
-		border-bottom-color: transparent;
+			border-bottom-width: 0.5rem;
+			border-bottom-style: solid;
+			border-bottom-color: transparent;
 
-		border-left-width: 0.5rem;
-		border-left-style: solid;
-		border-left-color: var(--primary-black);
-	}
+			border-left-width: 0.5rem;
+			border-left-style: solid;
+			border-left-color: var(--primary-black);
+		}
 
-	p.tableofcontents {
-		margin: 0;
-	}
+		p.tableofcontents {
+			margin: 0;
+		}
 
-	&[open] .triangle {
-		transform: rotate(90deg);
-	}
+		&[open] .triangle {
+			transform: rotate(90deg);
+		}
 
 	ol.toc {
 		background-color: white;
@@ -163,7 +144,6 @@ nav details {
 		margin-block-start: var(--section-spacing);
 		font-family: var(--heading-typeface);
 		margin-block-end: var(--paragraph-spacing);
-
 	}
 
 		ol.toc::before {
@@ -178,38 +158,30 @@ nav details {
 			inset-inline-start: 9rem;
 				/* https://typography-interaction-2627.github.io/topic/box-model/#absolute */
 		}
+	}
 }
 
 
-
-
-
-
-
 h1{
-	color: rgb(39, 38, 42);
+	color: var(--primary-grey);
 	font-family:var(--primary-typeface);
 	font-weight: var(--extrabold-wt);
-	margin-block-start: var(--section-spacing);
+	margin-block-start: var(--paragraph-spacing);
 	margin-block-end: var(--section-spacing);
 	text-transform: uppercase;
-	line-height: 6rlh;
-	margin-block: 2rlh;
-
+	line-height: var(--regular);
 
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--subheading-sm), 12vw , var(--heading));
 		/* line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading)); */
-}
 
-h1 span{
-	/* background-color: var(--primary-green); */
-	/* -webkit-text-stroke: 0; */
-	/* background-color: rgb(235, 229, 127); */
-	/* padding-inline: 0.5rem; */
-	font-family: var(--accent-typeface);
-	font-size: clamp(var(--subheading-lrg), 12vw , var(--heading-lrg));
-	color:var(--primary-green);
+
+	span{
+		/* padding-inline: 0.5rem; */
+		font-family: var(--accent-typeface);
+		font-size: clamp(var(--subheading-lrg), 12vw , var(--heading-lrg));
+		color:var(--primary-green);
+	}
 }
 
 h2, h3 {
@@ -581,6 +553,6 @@ span.author {
 
 		); */
 
-		try vertical trim
+		/* try vertical trim whenever you try the ruled pages look again */
 
 
