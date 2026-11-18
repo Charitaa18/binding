@@ -24,17 +24,17 @@
 /* TEXTSIZES */
 --basetext:0.5rem;
 --text-xsml: calc(1.8*var(--basetext));
---text-sml:calc(2*var(--basetext));
+--text-sml:calc(2.5*var(--basetext));
 --text-md: calc(1.5*var(--text-sml));
 --text-lrg: calc(1.5*var(--text-md));
 --text-xlrg: calc(2*var(--text-lrg));
---text-xxlrg: calc(3*var(--text-xlrg));
+--text-xxlrg: calc(2*var(--text-xlrg));
 /* TEXTTYPE */
 --references: var(--text-xsml);
---content: var(--text-md);
+--content: var(--text-sml);
 --metadata: calc(1.2*var(--text-md));
 --subheading-xsm: var(--metadata);
---subheading-sm: var(--tex-lrg);
+--subheading-sm: var(--text-lrg);
 --subheading-lrg: calc(1.2* var(--subheading-sm));
 --heading: var(--text-xlrg);
 --heading-lrg: var(--text-xxlrg);
@@ -67,6 +67,7 @@
 body {
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
+	max-inline: auto;
 	font-family: var(--primary-typeface);
 	font-weight: var(--regular-wt);
 	line-height: var(--relaxed);
@@ -76,6 +77,7 @@ body {
 
 	@media (width > 768px) {
 		margin-inline: auto;
+		padding-inline-start: var(--section-spacing);
 		max-inline-size: clamp(40rem, 90vw , 60rem);
 			/* Range of values between a defined minimum bound and a maximum bound. */
 			/* https://typography-interaction-2627.github.io/topic/responsive/#clamp */
@@ -172,21 +174,20 @@ h1{
 	line-height: var(--regular);
 
 	/* @media (width > 600px) { */
-		font-size: clamp(var(--subheading-sm), 12vw , var(--heading));
+		font-size: clamp(var(--subheading-lrg), 12vw , var(--heading-lrg));
 		/* line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading)); */
 
 
 	span{
 		/* padding-inline: 0.5rem; */
 		font-family: var(--accent-typeface);
-		font-size: clamp(var(--subheading-lrg), 12vw , var(--heading-lrg));
+		font-size: clamp(var(--subheading-sm), 12vw , var(--heading));
 		color:var(--primary-green);
 	}
 }
 
 h2, h3 {
 	color: var(--primary-black);
-	/* font-family:var(--heading-typeface); */
 	font-family:var(--primary-typeface);
 	font-weight: var(--bold-wt);
 	margin-block-start: var(--section-spacing);
@@ -194,50 +195,46 @@ h2, h3 {
 }
 
 h2 {
-	/* font-size: var(--subheading-lrg); */
-	font-size: clamp(calc(var(--subheading-sm)/1.4), 10vw , var(--subheading-lrg));
-	line-height: 4rlh;
-	margin-block: 2rlh 1rlh;
+	font-size: clamp(calc(var(--subheading-sm)/1.4), 6vw , var(--heading));
+	line-height: var(--regular);
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
 		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
 	}
 
 h3 {
-	/* font-size: var(--subheading-sm); */
 	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
-	line-height: 3rlh;
-	margin-block: 2rlh 1rlh;   /* 2 rows above, 1 below */
+	line-height: var(--regular);
 }
 
 P {
-	margin-block-start: var(--paragraph-spacing);
+	margin-block-start: var(--base-spacing-lrg);
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
-	font-size: var(--content);
-	line-height: 3rlh;
-	margin-block-start: 1.5rlh;
+	line-height: var(--relaxed);
 
 	/* @media (width > 600px) { */
-		font-size: clamp(var(--content), 1.5vw , var(--metadata));
+		font-size: clamp(var(--content), 2.5vw , var(--metadata));
 		/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
 			/* Accessibility for text */
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
 			/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
 	/* } */
+
+	&.prologue {
+		color: rgb(27, 27, 28);
+		font-size: clamp(var(--content), 3.5vw, calc(1.2 * var(--content)));
+	}
 }
 
 blockquote {
 	font-weight: var(--regular-wt);
-	/* font-family: var(--accent-typeface); */
 }
 
 ul {
 	list-style-type: disc;
 	font-size: clamp(var(--content), 1.5vw , var(--metadata));
-	/* line-height: var(--relaxed); */
 	list-style-position: outside;
-	/* position: absolute; */
 	padding-inline-start: 1.3rem;
 	/* text-indent: -0.5rem; */
 		/* Sets the length of empty space (indentation) */
@@ -251,8 +248,6 @@ ul {
 
 ol {
 	list-style-type: none;
-	/* list-style-type: disc; */
-	/* opacity: 0%; */
 	list-style-position: outside;
 }
 
@@ -340,16 +335,6 @@ mark {
 	/* filter: blur(0.2em) */
 		/* https://typography-interaction-2627.github.io/topic/advanced-css/#filter */
 		/* Is there a way to blur the mark without blurring the text */
-}
-
-p.prologue {
-	color: rgb(27, 27, 28);
-	/* margin-block-start: var(--section-spacing); */
-	font-size: clamp(var(--content), 1.5vw , calc(1.2*var(--content)));
-
-	 /* @media (width > 768px) {
-		font-size: var(--metadata);
-	} */
 }
 
 span.author {
