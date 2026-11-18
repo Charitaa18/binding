@@ -65,7 +65,7 @@
 /* MAXSIZE */
 --page-max-sticky:20rem;
 --page-max-phone: 50rem;
---page-max-laptop:70rem;
+--page-max-laptop:75rem;
 }
 
 
@@ -172,6 +172,10 @@ nav {
 	}
 }
 
+.toc li {
+	font-size: clamp(var(--content), 3vw , var(--metadata));
+}
+
 h1{
 	color: var(--primary-grey);
 	font-family:var(--primary-typeface);
@@ -181,14 +185,14 @@ h1{
 	line-height: var(--tight);
 
 	/* @media (width > 600px) { */
-		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
+		font-size: clamp(var(--subheading-lrg), 9vw , calc(var(--heading-lrg)/0.6));
 
 	span{
 		/* padding-inline: 0.5rem; */
 		font-family: var(--accent-typeface);
-		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
+		font-size: clamp(var(--subheading-lrg), 8vw , var(--heading-lrg));
 		color:var(--primary-green);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.1em;
 		display: inline-block;
 		/* so that rotate works on an inline element */
 		rotate: -2deg;
@@ -232,6 +236,7 @@ P {
 		font-weight: var(--thin-wt);
 		color: rgb(27, 27, 28);
 		font-size: clamp(var(--content), 2.5vw, calc(1.2 * var(--content)));
+		margin-block-end: var(--section-spacing);
 	}
 }
 
@@ -274,7 +279,7 @@ a {
 	}
 
 	&.author {
-		font-size: clamp(var(--text-md), 1.5vw , var(--metadata));
+		font-size: clamp(var(--text-sm), 1.5vw , var(--metadata));
 	}
 	&.article {
 		font-size: var(--references);
@@ -302,7 +307,7 @@ sup {
 time {
 
 	font-family: var(--primary-typeface);
-	font-size: clamp(var(--text-md), 1.5vw , var(--metadata));
+	font-size: clamp(var(--text-sm), 1.5vw , var(--metadata));
 
 }
 
