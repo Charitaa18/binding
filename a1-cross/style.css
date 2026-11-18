@@ -172,6 +172,10 @@ nav {
 	}
 }
 
+.toc li {
+	font-size: clamp(var(--content), 3vw , var(--metadata));
+}
+
 h1{
 	color: var(--primary-grey);
 	font-family:var(--primary-typeface);
@@ -228,7 +232,8 @@ P {
 		/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
 
 	&.prologue {
-		color: rgb(27, 27, 28);
+		font-weight: var(--thin-wt);
+		color: var(--primary-grey);
 		font-size: clamp(var(--content), 2.5vw, calc(1.2 * var(--content)));
 	}
 }

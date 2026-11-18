@@ -63,7 +63,8 @@
 --circle-size: 1.7em;
 --circle-padding: 0.25rem;
 /* MAXSIZE */
---page-max-sticky:20rem;
+--page-max-sticky: 20rem;
+--page-max-stickywide: 30rem;
 --page-max-phone: 50rem;
 --page-max-laptop:75rem;
 }
@@ -208,7 +209,7 @@ h2, h3 {
 }
 
 h2 {
-	font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
+	font-size: clamp(var(--metadata), 7vw , var(--subheading-lrg));
 	line-height: var(--regular);
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
@@ -216,7 +217,7 @@ h2 {
 	}
 
 h3 {
-	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
+	font-size: clamp(var(--text-md), 6vw , var(--subheading-sm));
 	line-height: var(--regular);
 }
 
@@ -234,8 +235,8 @@ P {
 	&.prologue {
 		font-style: italic;
 		font-weight: var(--thin-wt);
-		color: rgb(27, 27, 28);
-		font-size: clamp(var(--content), 2.5vw, calc(1.2 * var(--content)));
+		color: var(--primary-grey);
+		font-size: clamp(var(--references), 2.5vw, calc(1.2 * var(--content)));
 		margin-block-end: var(--section-spacing);
 	}
 }
@@ -450,8 +451,12 @@ li.reference {
 	font-family: var(--accent-typeface);
 	font-size: var(--content);
 	line-height: var(--regular);
-	margin-block: var(--paragraph-spacing);
+	margin-block-start: var(--paragraph-spacing);
+	margin-block-end: var(--section-spacing);
 	max-inline-size: var(--page-max-sticky);
+	&.wide {
+		max-inline-size: var(--page-max-stickywide);
+	}
 	p {
 		margin-block-start: 0;
 	}
@@ -463,7 +468,7 @@ li.reference {
 		rotate: -2deg;
 	}
 	span.sticky-highlight {
-		font-weight: var(--bold-wt);
+		font-weight: var(--extrabold-wt);
 	}
 	.sticky-accent {
 		font-family: var(--heading-typeface);
