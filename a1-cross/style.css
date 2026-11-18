@@ -82,7 +82,7 @@ body {
 	font-weight: var(--regular-wt);
 	line-height: var(--relaxed);
 	margin-inline: var(--paragraph-spacing);
-	border-inline-start: solid rgb(196, 55, 55) 0.2rem;
+	border-inline-start: solid var(--accent-red) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 
 	@media (width > 768px) {
