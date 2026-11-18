@@ -8,12 +8,13 @@
 /* COLOURS */
 --primary-black: rgb(0, 0, 0);
 --primary-white: rgb(243, 243, 243);
---primary-blue: rgb(45, 165, 192);
+--primary-blue: rgb(0, 134, 146);
 --primary-green:rgb(1, 199, 126);
---primary-purple:rgb(179, 163, 234);
+--primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
---primary-pink: rgb(199, 1, 133);
---primary-orange: rgb(214, 97, 24);
+--pastel-yellow:rgb(234, 227, 159);
+--pastel-green:rgb(202, 239, 197);
+--pastel-purple: rgb(179, 163, 234);
 --accent2:rgb(226, 177, 0);
 --accent-red: rgb(192, 45, 45);
 --accent-pink:rgb(242, 232, 232);
@@ -184,7 +185,6 @@ nav {
 
 nav.articles {
 	margin-block-start: var(--paragraph-spacing);
-	margin-block-end: 0;
 
 	ol {
 		display: flex;
@@ -214,7 +214,6 @@ nav.articles {
 		font-size: var(--references);
 		color: var(--primary-black);
 		text-decoration-line: none;
-		background-color: rgb(202, 239, 197);
 
 		@media (width > 768px) {
 			font-size: var(--content);
@@ -226,6 +225,7 @@ nav.articles {
 		}
 
 		&.current {
+			background-color: var(--accent2);
 			padding-block: var(--paragraph-spacing);
 			padding-inline: var(--base-spacing);
 			font-weight: var(--bold-wt);
@@ -235,12 +235,16 @@ nav.articles {
 		}
 	}
 
+	li:nth-child(1) a {
+		background-color: var(--pastel-green);
+	}
+
 	li:nth-child(2) a {
 		background-color: var(--accent2);
 	}
 
 	li:nth-child(3) a {
-		background-color: var(--primary-purple);
+		background-color: var(--pastel-purple);
 	}
 
 	.icon {
