@@ -14,8 +14,8 @@
 --primary-grey:rgb(39, 38, 42);
 --accent-red: rgb(192, 45, 45);
 /* --accent-green: rgb(52, 195, 52); */
---stickynote:rgb(235, 202, 136);
---highlight: rgb(194, 238, 188);
+--stickynote:rgb(234, 227, 159);
+--highlight: rgb(202, 239, 197);
 /* TYPEFACE */
 --heading-typeface:'architects daughter',sans-serif;
 --primary-typeface:'Be Vietnam Pro',sans-serif;
@@ -179,8 +179,6 @@ h1{
 
 	/* @media (width > 600px) { */
 		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
-		/* line-height: clamp(var(--relaxed-leading), 12vw , var(--extraloose-leading)); */
-
 
 	span{
 		/* padding-inline: 0.5rem; */
@@ -434,7 +432,7 @@ span.author {
 	rotate: -2deg;
 	font-family: var(--accent-typeface);
 	font-size: var(--content);
-	line-height: 1.2;
+	line-height: var(--regular);
 	margin-block: var(--paragraph-spacing);
 	max-inline-size: var(--page-max-sticky);
 	p {
@@ -443,16 +441,18 @@ span.author {
 
 	.sticky-label {
 		font-size: var(--metadata);
-		color: rgb(192, 45, 45);
+		color: var(--accent-red);
+		display: inline-block;
+		rotate: -2deg;
 	}
 	span.sticky-highlight {
-		/* color:rgb(52, 195, 52); */
 		font-weight: var(--bold-wt);
 	}
 	.sticky-accent {
 		font-family: var(--heading-typeface);
-		/* text-decoration: underline; */
 		text-decoration: double underline;
+		display: inline-block;
+		rotate: -1deg;
 	}
 }
 
