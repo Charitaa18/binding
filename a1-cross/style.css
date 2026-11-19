@@ -105,9 +105,8 @@ body {
 		}
 
 		/* @media (width > 450px) {
-			inset-inline-start: -3rem; */
-				/* Makes the holes start further from the margin when on a larger screen  */
-		/* } */
+			inset-inline-start: -3rem;
+		} */
 	}
 
 	@media (width > 768px) {

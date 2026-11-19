@@ -512,7 +512,7 @@ li.reference {
 		font-size: var(--content);
 
 		p.design {
-			font-size: calc(1.1*var(--metadata));
+			font-size: calc(var(--metadata)/1.1);
 			color:var(--primary-purple);
 		}
 
@@ -524,6 +524,10 @@ li.reference {
 			border: solid var(--primary-purple) 0.1rem;
 			border-radius: 50%;
 			padding: var(--base-spacing);
+			white-space: nowrap;
+					/* Stopping text from wrapping */
+					/* https://typography-interaction-2627.github.io/topic/advanced-css/#white-space-nowrap-nobr-nbsp */
+					/* Keeps the bubble text on one line*/
 		}
 	}
 
