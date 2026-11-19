@@ -339,7 +339,7 @@ P {
 	&.prologue {
 		font-weight: var(--thin-wt);
 		color: var(--primary-grey);
-		font-size: clamp(var(--content), 2.5vw, calc(1.2 * var(--content)));
+		font-size: clamp(calc(var(--content)/1.2), 2.5vw, calc(1.2 * var(--content)));
 	}
 }
 

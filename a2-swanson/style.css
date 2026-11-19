@@ -338,7 +338,7 @@ P {
 		font-style: italic;
 		font-weight: var(--thin-wt);
 		color: var(--primary-grey);
-		font-size: clamp(calc(1.1 *var(--references)), 2.5vw, calc(1.2 * var(--content)));
+		font-size: clamp(calc(var(--content)/1.2), 2.5vw, calc(1.2 * var(--content)));
 		margin-block-end: var(--section-spacing);
 	}
 }
