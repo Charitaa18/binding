@@ -96,6 +96,8 @@ body {
 		inline-size: var(--paragraph-spacing);
 		background-image: url("images/fighole3.png");
 		background-repeat: repeat;
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-repeat */
+			
 		background-size: 100%;
 		inset-inline-start: -2rem;
 
