@@ -77,7 +77,6 @@
 
 
 body {
-	background-repeat: repeat;
 	background-color: var(--background-opt1);
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
@@ -339,7 +338,7 @@ P {
 		font-style: italic;
 		font-weight: var(--thin-wt);
 		color: var(--primary-grey);
-		font-size: clamp(calc(1.1 *(var(--references)), 2.5vw, calc(1.2 * var(--content)));
+		font-size: clamp(calc(1.1 *var(--references)), 2.5vw, calc(1.2 * var(--content)));
 		margin-block-end: var(--section-spacing);
 	}
 }

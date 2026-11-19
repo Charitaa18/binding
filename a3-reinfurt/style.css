@@ -82,8 +82,8 @@ body {
 	font-family: var(--primary-typeface);
 	font-weight: var(--regular-wt);
 	line-height: var(--relaxed);
-	margin-inline: var(--paragraph-spacing);
-	border-inline-start: solid rgb(196, 55, 55) 0.2rem;
+	/* margin-inline: var(--paragraph-spacing); */
+	border-inline-start: solid var(--accent-red) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 	position: relative;
 	margin-inline-start: var(--section-spacing);
@@ -312,7 +312,7 @@ h2 {
 
 h3 {
 	margin-block-start: var(--paragraph-spacing);
-	font-size: clamp(var(--metadata), 10vw , var(--subheading-sm));
+	font-size: clamp(var(--metadata), 6vw , var(--subheading-sm));
 	line-height: var(--regular);
 }
 

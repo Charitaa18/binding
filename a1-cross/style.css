@@ -99,14 +99,14 @@ body {
 		background-size: 100%;
 		inset-inline-start: -2rem;
 
+		/* @media (width > 600px) {
+			inset-inline-start: -3rem;
+		} */
+
 		@media (width > 768px) {
 			inset-inline-start: -6rem;
 				/* Makes the holes start further from the margin when on a larger screen  */
 		}
-
-		/* @media (width > 450px) {
-			inset-inline-start: -3rem;
-		} */
 	}
 
 	@media (width > 768px) {
