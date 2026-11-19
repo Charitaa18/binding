@@ -383,7 +383,7 @@ a {
 	}
 
 	&.author {
-		font-size: clamp(var(--text-sm), 1.5vw , var(--metadata));
+		font-size: clamp(var(--text-sml), 1.5vw , var(--metadata));
 	}
 	&.article {
 		font-size: var(--references);
@@ -411,7 +411,7 @@ sup {
 time {
 
 	font-family: var(--primary-typeface);
-	font-size: clamp(var(--text-sm), 1.5vw , var(--metadata));
+	font-size: clamp(var(--text-sml), 1.5vw , var(--metadata));
 
 }
 
