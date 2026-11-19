@@ -67,9 +67,10 @@
 --circle-size: 1.7em;
 --circle-padding: 0.25rem;
 /* MAXSIZE */
---page-max-sticky:20rem;
+--page-max-sticky: 20rem;
+--page-max-stickywide: 30rem;
 --page-max-phone: 50rem;
---page-max-laptop:70rem;
+--page-max-laptop:75rem;
 }
 
 
