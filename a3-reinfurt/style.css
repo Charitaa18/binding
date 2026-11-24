@@ -86,10 +86,11 @@ body {
 	border-inline-start: solid var(--accent-red) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 	position: relative;
-	margin-inline-start: var(--section-spacing);
+	margin-inline-start: var(--base-spacing-lrg);
 
 	&::before {
 		content: "";
+		display: none;
 		position: absolute;
 		inset-block-start: 0;
 		inset-block-end: 0;
@@ -100,6 +101,7 @@ body {
 		inset-inline-start: -2rem;
 
 		@media (width > 768px) {
+			display: block;
 			inset-inline-start: -6rem;
 				/* Makes the holes start further from the margin when on a larger screen  */
 		}
@@ -321,7 +323,7 @@ P {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	line-height: var(--relaxed);
-	font-size: clamp(var(--content), 4rem, calc(1.4 * var(--content)));
+	font-size: clamp(var(--content), 2.5vw, calc(1.4 * var(--content)));
 	/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
 		/* Accessibility for text */
 		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
