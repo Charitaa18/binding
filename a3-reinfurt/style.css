@@ -321,7 +321,7 @@ P {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	line-height: var(--relaxed);
-	font-size: clamp(var(--content), 2.5vw, calc(1.4 * var(--content)));
+	font-size: clamp(var(--content), 4rem, calc(1.4 * var(--content)));
 	/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
 		/* Accessibility for text */
 		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
@@ -425,6 +425,32 @@ mark {
 	/* filter: blur(0.2em) */
 		/* https://typography-interaction-2627.github.io/topic/advanced-css/#filter */
 		/* Is there a way to blur the mark without blurring the text */
+
+		/* @media (width > 768px) {
+	p:hover mark
+	background-color: transparent;
+	transition-delay: 1s;
+	transition-duration: 0.5s;
+	transition-property: background-color, transform;
+	transition-timing-function: linear;
+	} */
+
+	@media (width > 768px) {
+		background-color: transparent;
+		transition-duration: 0.2s;
+		/* transition-timing-function: ease-in-out; */
+		transition-timing-function: linear;
+		transition-property: background-color;
+			/* Transition */
+			/* https://typography-interaction-2627.github.io/topic/advanced-css/#you-need-two-states-to-transition */
+			/* When the screens are wider than 768px the "marks" become transparent and only show up when you hover over each paragraph. */
+	}
+}
+
+	@media (width > 768px) {
+		p:hover mark {
+		background-color: var(--pastel-purple);
+	}
 }
 
 #top {
