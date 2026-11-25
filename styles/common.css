@@ -12,6 +12,7 @@
 --primary-green:rgb(1, 199, 126);
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
+--pastel-blue:rgb(161, 232, 236);
 --pastel-yellow:rgb(234, 227, 159);
 --pastel-green:rgb(202, 239, 197);
 --pastel-purple: rgb(179, 163, 234);
@@ -62,6 +63,7 @@
 --base-spacing-lrg: calc(1.5*var(--base-spacing));
 --paragraph-spacing:calc(2*var(--base-spacing));
 --section-spacing: calc(2.5*var(--paragraph-spacing));
+--divider-spacing: calc(2* var(--section-spacing));
 --content-indent: var(--paragraph-spacing);
 /* CIRCLE */
 --circle-size: 1.7em;
@@ -151,6 +153,16 @@ h2 {
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
 		/* Instead of making the line height sit between a min and max value, this makes it responsive to the size of the text height */
+
+		&.dwok {
+			color: var(--primary-green);
+		}
+		&.gdeaala {
+			color: var(--accent2);
+		}
+		&.anpfgd {
+			color: var(--primary-purple);
+		}
 	}
 
 h3 {
@@ -209,20 +221,33 @@ nav.articles {
 			padding: var(--paragraph-spacing);
 
 			&:hover {
-				color: var(--primary-blue);
+				color: var(--primary-white);
+			}
+		}
+
+		&.current {
+			padding-block: var(--paragraph-spacing);
+			padding-inline: var(--base-spacing);
+			font-weight: var(--bold-wt);
+			@media (width > 768px) {
+				padding-block-start: calc(var(--section-spacing)/1.3);
 			}
 		}
 	}
 
 	li:nth-child(1) a {
-		background-color: var(--pastel-green);
+		background-color: var(--primary-blue);
 	}
 
 	li:nth-child(2) a {
-		background-color: var(--pastel-yellow);
+		background-color: var(--pastel-green);
 	}
 
 	li:nth-child(3) a {
+		background-color: var(--pastel-yellow);
+	}
+
+	li:nth-child(4) a {
 		background-color: var(--pastel-purple);
 	}
 
@@ -237,5 +262,13 @@ nav.articles {
 		color: var(--primary-black);
 	}
 }
+section {
+	margin-block-start: var(--section-spacing);
+}
+
+.combining {
+	margin-block-start: var(--divider-spacing);
+}
+
 
 

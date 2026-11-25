@@ -13,6 +13,7 @@
 --primary-purple:rgb(101, 66, 227);
 --primary-grey:rgb(39, 38, 42);
 --primary-orange: rgb(214, 97, 24);
+--pastel-blue:rgb(161, 232, 236);
 --pastel-yellow:rgb(234, 227, 159);
 --pastel-green:rgb(202, 239, 197);
 --pastel-purple: rgb(179, 163, 234);
@@ -71,6 +72,7 @@
 /* MAXSIZE */
 --page-max-sticky: 20rem;
 --page-max-stickywide: 30rem;
+--page-max-keyargument: 45rem;
 --page-max-phone: 50rem;
 --page-max-laptop:75rem;
 }
@@ -255,14 +257,18 @@ nav.articles {
 	}
 
 	li:nth-child(1) a {
-		background-color: var(--pastel-green);
+		background-color: var(--pastel-blue);
 	}
 
 	li:nth-child(2) a {
-		background-color: var(--accent2);
+		background-color: var(--pastel-green);
 	}
 
 	li:nth-child(3) a {
+		background-color: var(--accent2);
+	}
+
+	li:nth-child(4) a {
 		background-color: var(--pastel-purple);
 	}
 
@@ -517,6 +523,7 @@ li.reference {
 		border: dashed var(--primary-orange) 0.1rem;
 		border-radius: 1rem;
 		font-size: var(--content);
+		max-inline-size: var(--page-max-keyargument);
 
 		p.design {
 			font-size: calc(1.1*var(--metadata));
