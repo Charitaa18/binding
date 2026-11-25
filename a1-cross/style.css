@@ -1,10 +1,6 @@
 :root {
 /* BACKGROUND */
 --background-opt1: rgb(244, 244, 244);
---background-opt2: linear-gradient(to bottom,rgb(180, 180, 180)5%, rgb(180, 180, 180) 5%, rgb(107, 111, 143) 70%, rgb(146, 173, 178));
-	/* Positioning color stops with liner gradient */
-	/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Images/Using_gradients */
-	/* You can choose the direction of the gradient and also the percentage of space taken up by each colour.  */
 /* COLOURS */
 --primary-black: rgb(0, 0, 0);
 --primary-white: rgb(243, 243, 243);
@@ -27,7 +23,7 @@
 nav.articles {
 
 	a {
-		
+
 		@media (width > 768px) {
 			&:hover {
 				color: var(--primary-blue);
