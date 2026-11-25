@@ -213,6 +213,7 @@ nav.articles {
 		font-size: var(--references);
 		color: var(--primary-black);
 		text-decoration-line: none;
+		box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/20%);
 
 		@media (width > 768px) {
 			font-size: var(--content);
@@ -229,6 +230,7 @@ nav.articles {
 			font-weight: var(--bold-wt);
 			@media (width > 768px) {
 				padding-block-start: calc(var(--section-spacing)/1.3);
+				box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/40%);
 			}
 		}
 	}
@@ -255,9 +257,13 @@ nav.articles {
 	}
 
 	.tab-number {
+		display: none;
+
+		@media (width > 768px) {
 		display: inline;
 		font-family: var(--primary-typeface);
 		color: var(--primary-black);
+		}
 	}
 }
 
