@@ -91,17 +91,16 @@ body {
 	&::before {
 		content: "";
 		display: none;
-		position: absolute;
-		inset-block-start: 0;
-		inset-block-end: 0;
-		inline-size: var(--paragraph-spacing);
-		background-image: url("images/fighole3.png");
-		background-repeat: repeat;
-		background-size: 100%;
-		inset-inline-start: -2rem;
 
 		@media (width > 768px) {
 			display: block;
+			position: absolute;
+			inset-block-start: 0;
+			inset-block-end: 0;
+			inline-size: var(--paragraph-spacing);
+			background-image: url("images/fighole3.png");
+			background-repeat: repeat;
+			background-size: 100%;
 			inset-inline-start: -6rem;
 				/* Makes the holes start further from the margin when on a larger screen  */
 		}
@@ -323,11 +322,12 @@ P {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	line-height: var(--relaxed);
-	font-size: clamp(var(--content), 2.5vw, calc(1.4 * var(--content)));
-	/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
-		/* Accessibility for text */
-		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
-		/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
+	font-size: var(--content);
+
+	@media (width > 768px) {
+		font-size: calc(1.2* var(--content));
+	}
+
 
 	&.prologue {
 		color: rgb(27, 27, 28);

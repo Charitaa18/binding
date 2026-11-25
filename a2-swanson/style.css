@@ -328,11 +328,11 @@ P {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
 	line-height: var(--relaxed);
-	font-size: clamp(var(--content), 2.5vw, calc(1.4 * var(--content)));
-	/* line-height: clamp(var(--regular-leading), 2vw , var(--relaxed-leading)); */
-		/* Accessibility for text */
-		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
-		/* The same system can be applied to make the content responsive. For example the leading for all paragraphs will never go below regular leading and never over relaxed leading. */
+	font-size: var(--content);
+
+	@media (width > 768px) {
+		font-size: calc(1.2* var(--content));
+	}
 
 	&.prologue {
 		font-style: italic;
