@@ -432,13 +432,29 @@ aside {
 mark {
 	color: var(--primary-black);
 	font-weight: var(--semibold-wt);
-	transform: rotate(9deg);
 	background-color: var(--highlight);
 	padding-inline: 0.1rem;
 	border-radius: 0.2rem;
 	/* filter: blur(0.2em) */
 		/* https://typography-interaction-2627.github.io/topic/advanced-css/#filter */
 		/* Is there a way to blur the mark without blurring the text */
+
+	@media (width > 768px) {
+		background-color: transparent;
+		transition-duration: 0.2s;
+		/* transition-timing-function: ease-in-out; */
+		transition-timing-function: linear;
+		transition-property: background-color;
+			/* Transition */
+			/* https://typography-interaction-2627.github.io/topic/advanced-css/#you-need-two-states-to-transition */
+			/* When the screens are wider than 768px the "marks" become transparent and only show up when you hover over each paragraph. */
+	}
+
+	@media (width > 768px) {
+		p:hover & {
+		background-color: var(--pastel-purple);
+		}
+	}
 }
 
 #top {
@@ -582,6 +598,10 @@ li.reference {
 }
 
 
+
+
+/* Attempts at having ruled lines throughout the article with the text in between */
+
 /* background-image: url("images/Grid-PNG-Picture.png"); */
 		/* Image file path */
 		/* https://chatgpt.com/s/t_6af764e340148191844d8da58a467fd3 */
@@ -614,7 +634,7 @@ repeating-linear-gradient(
 		Various attempts at making a grid
 ); */
 
-/* try vertical trim whenever you try the ruled pages look again */
+/* try vertical trim for the <sups> whenever you try the ruled pages look again */
 
 
 

@@ -453,11 +453,11 @@ mark {
 			/* https://typography-interaction-2627.github.io/topic/advanced-css/#you-need-two-states-to-transition */
 			/* When the screens are wider than 768px the "marks" become transparent and only show up when you hover over each paragraph. */
 	}
-}
 
 	@media (width > 768px) {
 		p:hover mark {
 		background-color: var(--pastel-purple);
+		}
 	}
 }
 
