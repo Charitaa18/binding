@@ -89,23 +89,23 @@ body {
 	border-inline-start: solid var(--accent-red) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 	position: relative;
-	margin-inline-start: var(--section-spacing);
+	margin-inline-start: var(--paragraph-spacing);
 
 	&::before {
 		content: "";
-		position: absolute;
-		inset-block-start: 0;
-		inset-block-end: 0;
-		inline-size: var(--paragraph-spacing);
-		background-image: url("images/fighole3.png");
-		background-repeat: repeat;
-			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-repeat */
-
-		background-size: 100%;
-		inset-inline-start: -2rem;
+		display: none;
 
 		@media (width > 768px) {
-			inset-inline-start: -6rem;
+			inset-inline-start: -4rem;
+			position: absolute;
+			inset-block-start: 0;
+			inset-block-end: 0;
+			inline-size: var(--paragraph-spacing);
+			background-image: url("images/fighole3.png");
+			background-repeat: repeat;
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-repeat */
+			background-size: 100%;
+			display: block;
 				/* Makes the holes start further from the margin when on a larger screen  */
 		}
 	}
