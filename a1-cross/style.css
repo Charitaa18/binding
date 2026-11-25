@@ -27,8 +27,7 @@
 nav.articles {
 
 	a {
-		background-color: rgb(202, 239, 197);
-
+		
 		@media (width > 768px) {
 			&:hover {
 				color: var(--primary-blue);
@@ -36,20 +35,8 @@ nav.articles {
 		}
 	}
 
-	li:nth-child(1) a {
-		background-color: var(--pastel-blue);
-	}
-
 	li:nth-child(2) a {
 		background-color: var(--primary-green);
-	}
-
-	li:nth-child(3) a {
-		background-color: var(--pastel-yellow);
-	}
-
-	li:nth-child(4) a {
-		background-color: var(--pastel-purple);
 	}
 }
 
