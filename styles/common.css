@@ -154,11 +154,10 @@ h2, h3 {
 	color: var(--primary-black);
 	font-family:var(--primary-typeface);
 	font-weight: var(--bold-wt);
-	margin-block-start: var(--section-spacing);
-	margin-block-end: var(--paragraph-spacing);
 }
 
 h2 {
+	margin-block: var(--section-spacing);
 	font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
 	line-height: var(--regular);
 		/* Fluid line height */
@@ -167,6 +166,7 @@ h2 {
 	}
 
 h3 {
+	margin-block: var(--paragraph-spacing);
 	font-size: clamp(var(--metadata), 6vw , var(--subheading-sm));
 	line-height: var(--regular);
 }
@@ -526,10 +526,10 @@ li.reference {
 		grid-column: span 6;
 	}
 
-	h2 {
+	/* h2 {
 		margin-block-start: 0;
 		margin-block-end: 0;
-	}
+	} */
 }
 
 .key-argument {
@@ -537,14 +537,22 @@ li.reference {
 	flex-direction: column;
 	row-gap: var(--paragraph-spacing);
 	font-family: var(--accent-typeface);
+	margin-block-start: var(--paragraph-spacing);
 
-	.note {
+	.note1, .note2 {
 		color: var(--accent-red);
 		font-size: var(--metadata);
-		rotate: -2.5deg;
+
+		&.note1 {
+			rotate: -2.5deg;
+		}
+		&.note2 {
+			rotate: 2deg;
+		}
 	}
 
-	.note-content {
+
+	.note-content1, .note-content2{
 		display:flex;
 		flex-direction: column;
 		row-gap: var(--base-spacing);
@@ -554,6 +562,14 @@ li.reference {
 		border-radius: 1rem;
 		font-size: var(--content);
 		max-inline-size: var(--page-max-keyargument);
+		rotate: -1deg;
+
+		&.note-content1 {
+			rotate: -1deg;
+		}
+		&.note-content2 {
+			rotate: 1.5deg;
+		}
 
 		p.design {
 			font-size: calc(1.1*var(--metadata));
@@ -568,6 +584,8 @@ li.reference {
 			border: solid var(--primary-green) 0.1rem;
 			border-radius: 50%;
 			padding: var(--base-spacing);
+			white-space: nowrap;
+				/* https://typography-interaction-2627.github.io/topic/advanced-css/#white-space-nowrap-nobr-nbsp */
 		}
 	}
 
