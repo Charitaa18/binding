@@ -556,7 +556,11 @@ li.reference {
 		color: var(--primary-green);
 		font-family: var(--heading-typeface);
 		border: solid black 0.2rem;
-		border-radius: 50%;
+		/* border-radius: 50% ; */
+		border-radius: 55% 44% 47% 51% / 49% 46% 42% 52%;
+			/* property rounds the corners of an element's outer border edge */
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius */
+			/* To make the circle ever so wobbly! The 4 values represent the 4 corners of the box (first part is the horizontal axis of the curve and second four represent the vertical axis or height of the curves) */
 		padding: var(--base-spacing);
 	}
 
