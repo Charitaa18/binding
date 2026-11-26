@@ -656,7 +656,7 @@ li.reference {
 	@media (width > 768px) {
 		inset: 0;
 		flex-direction: column;
-		inset-inline-start: -5rem;
+		inset-inline-start: -4rem;
 		inset-inline-end: auto;
 		justify-content: space-evenly;
 	}
