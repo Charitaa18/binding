@@ -688,43 +688,59 @@ li.reference {
 		margin-block: var(--paragraph-spacing);
 	}
 }
+
+.sticky-stack {
+	--peellength-y: 20rem;
+	--peeldistance-y: 17rem;
+	--peeldistance-x: 24rem;
+	cursor: pointer;
+	display: grid;
+	/* align-items: center; */
+	align-items: start;
+		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/align-items */
+
+	.sticky-note {
+		grid-column: 1;
+		grid-row: 1;
+			/* puts the notes in the same row and column */
+		margin-inline-start: var(--paragraph-spacing);
+		margin-block-end: var(--peellength-y);
+			/* Leaves enough space for the sticky to move down into  */
+	}
+
+	.sticky2 {
+		position:relative;
+		z-index: 1;
+			/* to overlap sticky2 over sticky1 */
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Using_z-index */
+		/* margin-block-start: -10*; */
+		transition-delay: 0.5s;
+		transition-duration: 1.5s;
+		transition-property: translate;
+		transition-timing-function: ease-out;
+		/* transition-timing-function: steps(2, end); */
+			/* https://typography-interaction-2627.github.io/topic/advanced-css/#you-need-two-states-to-transition */
+	}
+
 	@media (width <= 768px) {
-		.sticky-stack {
-			--peellength: 20rem;
-			--peeldistance: 17rem;
-			cursor: pointer;
-			display: grid;
-
-
-		.sticky-note {
-			grid-column: 1;
-			grid-row: 1;
-				/* puts the notes in the same row and column */
-			margin-inline-start: var(--paragraph-spacing);
-			margin-block-end: var(--peellength);
-				/* Leaves enough space for the sticky to move down into  */
-		}
-
-		.sticky2 {
-			position:relative;
-			z-index: 1;
-				/* to overlap sticky2 over sticky1 */
-				/* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Positioned_layout/Using_z-index */
-			/* margin-block-start: -10*; */
-			transition-delay: 0.5s;
-			transition-duration: 1.5s;
-			transition-property: translate;
-			transition-timing-function: ease-out;
-			/* transition-timing-function: steps(2, end); */
-				/* https://typography-interaction-2627.github.io/topic/advanced-css/#you-need-two-states-to-transition */
-		}
-
 		&:hover .sticky2 {
-			translate: 0 var(--peeldistance);
+			translate: 0 var(--peeldistance-y);
 				/* https://typography-interaction-2627.github.io/topic/advanced-css/#individual-properties */
 				/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/translate */
 				/* First 0 because I don't want it to move sideways and Slightly lesser than (--peellenth) because I want some overlap */
 			/* rotate: 7deg; */
+		}
+	}
+
+	@media (width > 768px) {
+		.sticky-note {
+			/* grid-column: 1;
+			grid-row: 1; */
+			margin-inline-start: var(--section-spacing);
+		}
+
+		&:hover .sticky2 {
+		translate: var(--peeldistance-x) 0;
 		}
 	}
 }
