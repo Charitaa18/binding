@@ -128,11 +128,48 @@ body {
 	}
 }
 
+article {
+	background-color: var(--background-opt1);
+	margin-block-start: var(--paragraph-spacing);
+	transform-origin: left;
+	animation-name: page-turn;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	/* https://typography-interaction-2627.github.io/topic/advanced-css/#keyframes */
+}
+
+@keyframes page-turn {
+
+	from {
+		transform: perspective(140rem) rotateY(-90deg);
+		/* transform: skewY(50deg);
+		transform-origin: 90% -100%; */
+		/* display: none; */
+		/* transform: perspective(10rem); */
+		opacity: 0;
+	}
+	to {
+		transform: perspective(180rem) rotateY(0deg);
+		/* transform: skew(180deg); */
+		/* transform: perspective(120rem); */
+		opacity: 1;
+	}
+	/* https://typography-interaction-2627.github.io/topic/advanced-css/#transform-function */
+	/* https://chatgpt.com/share/6b07d44c-805c-83ea-807a-c24303e6161e */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	article {
+		animation-name: none;
+	}
+}
+
 h1{
 	color: var(--primary-grey);
 	font-family:var(--primary-typeface);
 	font-weight: var(--extrabold-wt);
-	margin-block: var(--paragraph-spacing);
+	margin-block-start: var(--paragraph-spacing);
+	margin-block-end: var(--paragraph-spacing);
 	text-transform: uppercase;
 	line-height: var(--tight);
 
