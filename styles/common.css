@@ -143,7 +143,7 @@ h1{
 		/* padding-inline: 0.5rem; */
 		font-family: var(--accent-typeface);
 		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
-		letter-spacing: 0.2em;
+		letter-spacing: 0.1em;
 		display: inline-block;
 		/* so that rotate works on an inline element */
 		rotate: -2deg;
@@ -158,7 +158,7 @@ h2, h3 {
 
 h2 {
 	margin-block: var(--section-spacing);
-	font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
+	font-size: clamp(var(--subheading-xsm), 5vw , var(--subheading-lrg));
 	line-height: var(--regular);
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
@@ -167,7 +167,7 @@ h2 {
 
 h3 {
 	margin-block: var(--paragraph-spacing);
-	font-size: clamp(var(--metadata), 6vw , var(--subheading-sm));
+	font-size: clamp(var(--metadata), 5vw , var(--subheading-sm));
 	line-height: var(--regular);
 }
 
@@ -196,7 +196,7 @@ nav.articles {
 	ol {
 		display: flex;
 		align-items: flex-end;
-		column-gap: var(--paragraph-spacing);
+		column-gap: var(--base-spacing);
 		padding-inline-start: var(--paragraph-spacing);
 		margin-block-start: 0;
 		margin-block-end: 0;
@@ -208,6 +208,7 @@ nav.articles {
 		@media (width > 768px) {
 			padding-inline-start: var(--section-spacing);
 			margin-inline: calc(-1 * var(--section-spacing));
+			column-gap: var(--paragraph-spacing);
 		}
 	}
 
@@ -669,7 +670,7 @@ li.reference {
 		box-shadow: inset 0 0.3rem 0.5rem rgb(0 0 0/20%);
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow */
 			/* The inset makes it an inner shadow so it looks like a hole */
-		&:nth-child(n + 10) {
+		&:nth-child(n + 11) {
 			display: none;
 
 			@media (width > 768px) {
