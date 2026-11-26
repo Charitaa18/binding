@@ -65,7 +65,7 @@
 --base-spacing-lrg: calc(1.5*var(--base-spacing));
 --paragraph-spacing:calc(2*var(--base-spacing));
 --section-spacing: calc(2.5*var(--paragraph-spacing));
---divider-spacing: calc(2*var(--section-spacing));
+--divider-spacing: calc(1.5*var(--section-spacing));
 --content-indent: var(--paragraph-spacing);
 /* CIRCLE */
 --circle-size: 1.7em;
