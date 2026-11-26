@@ -65,6 +65,7 @@
 --base-spacing-lrg: calc(1.5*var(--base-spacing));
 --paragraph-spacing:calc(2*var(--base-spacing));
 --section-spacing: calc(2.5*var(--paragraph-spacing));
+--divider-spacing: calc(2*var(--section-spacing));
 --content-indent: var(--paragraph-spacing);
 /* CIRCLE */
 --circle-size: 1.7em;
@@ -90,12 +91,13 @@ body {
 	padding-inline-start: var(--paragraph-spacing);
 	position: relative;
 	margin-inline-start: var(--paragraph-spacing);
+	padding-block-start: var(--divider-spacing);
 
-	&::before {
+	/* &::before {
 		content: "";
-		display: none;
+		display: none; */
 
-		@media (width > 768px) {
+		/* @media (width > 768px) {
 			inset-inline-start: -4rem;
 			position: absolute;
 			inset-block-start: 0;
@@ -103,16 +105,19 @@ body {
 			inline-size: var(--paragraph-spacing);
 			background-image: url("images/fighole3.png");
 			background-repeat: repeat;
-			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-repeat */
+			https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-repeat
 			background-size: 100%;
 			display: block;
-				/* Makes the holes start further from the margin when on a larger screen  */
-		}
-	}
+				Makes the holes start further from the margin when on a larger screen
+		} */
+
+
 
 	@media (width > 768px) {
 		margin-inline: auto;
 		padding-inline-start: var(--section-spacing);
+		padding-block-start: 0;
+		/* So that the extra space for the holes goes away */
 		max-inline-size: clamp(40rem, 90vw , var(--page-max-laptop));
 			/* Range of values between a defined minimum bound and a maximum bound. */
 			/* https://typography-interaction-2627.github.io/topic/responsive/#clamp */
@@ -187,13 +192,12 @@ nav.articles {
 
 	ol {
 		display: flex;
-		flex-wrap: wrap;
 		align-items: flex-end;
-		column-gap: var(--base-spacing);
-		padding: 0;
+		column-gap: var(--paragraph-spacing);
 		padding-inline-start: var(--paragraph-spacing);
 		margin-block-start: 0;
 		margin-block-end: 0;
+		/* top red margin */
 		margin-inline-start: calc(-1 * var(--paragraph-spacing));
 		border-block-end: solid var(--accent-red) 0.2rem;
 
@@ -259,7 +263,7 @@ nav.articles {
 	.tab-number {
 		display: none;
 
-		@media (width > 768px) {
+		@media (width > 768px){
 		display: inline;
 		font-family: var(--primary-typeface);
 		color: var(--primary-black);
@@ -505,6 +509,7 @@ li.reference {
 		aspect-ratio: 1;
 			/* It allows you to define the desired width-to-height ratio of an element's box. */
 			/* https://chatgpt.com/s/t_6afd2b8ce5348191ac2d910359eb8828 */
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio */
 			/* To avoid the circle changing shape as the screen gets responsive and not take up the width of the container */
 		color: var(--primary-green);
 		font-family: var(--heading-typeface);
@@ -601,6 +606,51 @@ li.reference {
 		text-decoration: double underline;
 		display: inline-block;
 		rotate: -1deg;
+	}
+}
+
+.holes {
+	position: absolute;
+	inset-block-start: var(--paragraph-spacing);
+	inset-inline: var(--base-spacing);
+	display: flex;
+	justify-content: space-evenly;
+
+	@media (width > 768px) {
+		inset: 0;
+		flex-direction: column;
+		inset-inline-start: -5rem;
+		inset-inline-end: auto;
+		justify-content: space-evenly;
+	}
+
+	span {
+		inline-size: 1.5rem;
+		block-size: 1.5rem;
+		border-radius: 50%;
+		background-color: var(--background-opt1);
+		box-shadow: inset 0 0.3rem 0.5rem rgb(0 0 0/20%);
+			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow */
+		&:nth-child(n + 10) {
+			display: none;
+
+			@media (width > 768px) {
+				display: block;
+			}
+		}
+	}
+
+	span.oval {
+		display: none;
+
+		@media (width > 768px) {
+			display: block;
+			inline-size: 1.5rem;
+			block-size: 4rem;
+			border-radius: 40%;
+			background-color: var(--background-opt1);
+			box-shadow: inset 0 0.3rem 0.4rem rgb(0 0 0/20%);
+		}
 	}
 }
 
