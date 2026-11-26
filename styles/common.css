@@ -82,7 +82,6 @@ body {
 	background-color: var(--background-opt1);
 	color: var(--primary-black);
 	max-inline-size: var(--page-max-phone);
-	margin-inline: auto;
 	font-family: var(--primary-typeface);
 	font-weight: var(--regular-wt);
 	line-height: var(--relaxed);
@@ -90,8 +89,8 @@ body {
 	border-inline-start: solid var(--accent-red) 0.2rem;
 	padding-inline-start: var(--paragraph-spacing);
 	position: relative;
-	margin-inline-start: var(--paragraph-spacing);
 	padding-block-start: var(--divider-spacing);
+	border:solid brown 0.8rem;
 
 	/* &::before {
 		content: "";
@@ -114,14 +113,19 @@ body {
 
 
 	@media (width > 768px) {
-		margin-inline: auto;
-		padding-inline-start: var(--section-spacing);
+		/* margin-inline: auto; */
+		padding-inline: var(--section-spacing);
 		padding-block-start: 0;
 		/* So that the extra space for the holes goes away */
 		max-inline-size: clamp(40rem, 90vw , var(--page-max-laptop));
 			/* Range of values between a defined minimum bound and a maximum bound. */
 			/* https://typography-interaction-2627.github.io/topic/responsive/#clamp */
 			/* setting the min, preferred value and max width of the screen respectively when the screen width goes over 768px */
+		border-inline-start: solid var(--accent-red) 0.2rem;
+	}
+
+	@media (width > 1200px) {
+		margin-inline: auto;
 	}
 }
 
@@ -198,12 +202,13 @@ nav.articles {
 		margin-block-start: 0;
 		margin-block-end: 0;
 		/* top red margin */
+		/* Removing the same amount of space given to the entire body by using negative paragraph spacing so the red line extends till the end */
 		margin-inline-start: calc(-1 * var(--paragraph-spacing));
 		border-block-end: solid var(--accent-red) 0.2rem;
 
 		@media (width > 768px) {
 			padding-inline-start: var(--section-spacing);
-			margin-inline-start: calc(-1 * var(--section-spacing));
+			margin-inline: calc(-1 * var(--section-spacing));
 		}
 	}
 
