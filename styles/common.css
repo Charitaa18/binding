@@ -90,7 +90,6 @@ body {
 	padding-inline-start: var(--paragraph-spacing);
 	position: relative;
 	padding-block-start: var(--divider-spacing);
-	border:solid brown 0.8rem;
 
 	/* &::before {
 		content: "";
@@ -587,12 +586,13 @@ li.reference {
 		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow */
 		/* Like text-shadow it creates a shadow around the box with vertical and horizontal offset and then blur. Followed by colour and the opacity */
 	padding: var(--paragraph-spacing);
-	rotate: -2deg;
+	/* rotate: -2deg; */
 	font-family: var(--accent-typeface);
 	font-size: var(--content);
 	line-height: var(--regular);
-	margin-block: var(--paragraph-spacing);
+	margin-block: var(--section-spacing);
 	max-inline-size: var(--page-max-sticky);
+
 	p {
 		margin-block-start: 0;
 	}
@@ -611,6 +611,20 @@ li.reference {
 		text-decoration: double underline;
 		display: inline-block;
 		rotate: -1deg;
+	}
+
+	&.sticky1 {
+		rotate: -5deg;
+		margin-inline-start: var(--section-spacing);
+	}
+	&.sticky2 {
+		rotate: 12deg;
+		margin-inline-start: var(--divider-spacing);
+	}
+
+	&.sticky3, &.wide{
+		rotate: 6deg;
+		margin-inline-start: var(--paragraph-spacing);
 	}
 }
 
@@ -636,6 +650,7 @@ li.reference {
 		background-color: var(--background-opt1);
 		box-shadow: inset 0 0.3rem 0.5rem rgb(0 0 0/20%);
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow */
+			/* The inset makes it an inner shadow so it looks like a hole */
 		&:nth-child(n + 10) {
 			display: none;
 
