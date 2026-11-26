@@ -737,6 +737,7 @@ li.reference {
 			/* grid-column: 1;
 			grid-row: 1; */
 			margin-inline-start: var(--section-spacing);
+			margin-block-end: var(--paragraph-spacing);
 		}
 
 		&:hover .sticky2 {
