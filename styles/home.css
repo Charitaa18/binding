@@ -224,7 +224,6 @@ section {
 
 	.section-number {
 		display: inline-block;
-		background-color: var(--pastel-green);
 		padding: var(--paragraph-spacing);
 		border-top-right-radius: var(--base-spacing);
 		border-top-left-radius: var(--base-spacing);
@@ -246,6 +245,8 @@ section {
 		padding: var(--paragraph-spacing);
 		position: relative;
 		border-radius: var(--base-spacing);
+		border-top-left-radius: 0;
+
 
 		&::after {
 			content: "";
