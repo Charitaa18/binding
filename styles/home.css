@@ -217,34 +217,6 @@ section {
 		background-color: var(--pastel-purple);
 	} */
 
-	&::after {
-			content: "";
-			position: absolute;
-			inset-block-start: var(--paragraph-spacing);
-			inset-inline-end: var(--paragraph-spacing);
-
-			width: 0;
-			height: 0;
-			transform: rotate(0deg);
-
-			border-top-width: 0.5rem;
-			border-top-style: solid;
-			border-top-color: transparent;
-
-			border-bottom-width: 0.5rem;
-			border-bottom-style: solid;
-			border-bottom-color: transparent;
-
-			border-left-width: 0.5rem;
-			border-left-style: solid;
-			border-left-color: var(--primary-black);
-		}
-
-
-	&[open] .divider-title::after {
-		transform: rotate(90deg);
-	}
-
 	summary {
 		list-style-type:none;
 		cursor: pointer;
@@ -273,6 +245,35 @@ section {
 		background-color: var(--pastel-green);
 		padding: var(--paragraph-spacing);
 		position: relative;
+		border-radius: var(--base-spacing);
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset-block-start: calc(2*var(--paragraph-spacing));
+			inset-inline-end: var(--paragraph-spacing);
+
+			width: 0;
+			height: 0;
+			transform: rotate(0deg);
+
+			border-top-width: 0.5rem;
+			border-top-style: solid;
+			border-top-color: transparent;
+
+			border-bottom-width: 0.5rem;
+			border-bottom-style: solid;
+			border-bottom-color: transparent;
+
+			border-left-width: 0.5rem;
+			border-left-style: solid;
+			border-left-color: var(--primary-black);
+		}
+
+	}
+
+	&[open] .divider-title::after {
+		transform: rotate(90deg);
 	}
 
 	&.cross .section-number,
@@ -294,9 +295,15 @@ section {
 	}
 
 	.divider-more {
+		border-radius: var(--base-spacing);
 		padding-block-start: var(--base-spacing);
 		padding-block-end: var(--paragraph-spacing);
 		padding-inline: var(--paragraph-spacing);
+
+		a {
+			display: block;
+			margin-block: var(--paragraph-spacing);
+		}
 
 		@media (width > 768px) {
 			a:hover {
