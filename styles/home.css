@@ -73,6 +73,9 @@
 --page-max-stickywide: 30rem;
 --page-max-phone: 50rem;
 --page-max-laptop:75rem;
+/* SHADOW */
+--shadow1: 0 0.2rem 0.4rem rgb(0 0 0/20%);
+--shadow2: 0 0.2rem 0.4rem rgb(0 0 0/30%);
 }
 
 h1{
@@ -106,7 +109,7 @@ h2, h3 {
 
 h2 {
 	margin-block-start: var(--section-spacing);
-	font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
+	font-size: clamp(var(--subheading-xsm), 5vw , var(--subheading-lrg));
 	line-height: var(--regular);
 		/* Fluid line height */
 		/* https://chatgpt.com/share/6af3a830-91dc-83ea-9ccd-0fc8346de80f */
@@ -184,5 +187,103 @@ section {
 	margin-block-start: var(--divider-spacing);
 }
 
+.reading-cross {
+	background-color: var(--highlight);
+}
 
+.reading-swanson {
+	background-color: var(--stickynote);
+}
+.reading-reinfurt {
+	background-color: var(--pastel-purple);
+}
+
+.divider {
+	margin-block-start: var(--section-spacing);
+	filter: drop-shadow(var(--shadow1));
+		/* https://typography-interaction-2627.github.io/topic/advanced-css/#filter */
+		/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/filter */
+		/* So the shape alone gets the shadow not the whole box */
+
+	/* &.cross {
+		background-color: var(--pastel-green);
+	} */
+
+	/* &.swanson {
+		background-color: var(--pastel-yellow);
+	}
+
+	&.reinfurt {
+		background-color: var(--pastel-purple);
+	} */
+	
+
+	&::after {
+			content: "";
+			position: absolute;
+			inset-block-start: var(--paragraph-spacing);
+			inset-inline-end: var(--paragraph-spacing);
+
+			width: 0;
+			height: 0;
+			transform: rotate(0deg);
+
+			border-top-width: 0.5rem;
+			border-top-style: solid;
+			border-top-color: transparent;
+
+			border-bottom-width: 0.5rem;
+			border-bottom-style: solid;
+			border-bottom-color: transparent;
+
+			border-left-width: 0.5rem;
+			border-left-style: solid;
+			border-left-color: var(--primary-black);
+		}
+
+
+	&[open] .divider-title::after {
+		transform: rotate(90deg);
+	}
+
+	summary {
+		list-style-type:none;
+		cursor: pointer;
+	}
+
+	.section-number {
+		display: inline-block;
+		background-color: var(--pastel-green);
+		padding: var(--paragraph-spacing);
+		border-top-right-radius: var(--base-spacing);
+		border-top-left-radius: var(--base-spacing);
+		font-weight: var(--bold-wt);
+	}
+
+	&.swanson .section-number {
+		margin-inline-start: 6rem;
+	}
+	&.reinfurt .section-number {
+		margin-inline-start: 12rem;
+	}
+
+	.divider-title {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--base-spacing);
+		background-color: var(--pastel-green);
+		padding: var(--paragraph-spacing);
+		position: relative;
+	}
+
+	h2 {
+		margin-block: 0;
+		color: var(--primary-black);
+	}
+
+	.author-title {
+		margin-block-start: 0;
+	}
+
+}
 

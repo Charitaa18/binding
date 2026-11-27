@@ -174,12 +174,12 @@ h1{
 	line-height: var(--tight);
 
 	/* @media (width > 600px) { */
-		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
+		font-size: clamp(var(--subheading-lrg), 10vw , var(--heading-lrg));
 
 	span{
 		/* padding-inline: 0.5rem; */
 		font-family: var(--accent-typeface);
-		font-size: clamp(var(--subheading-lrg), 11vw , var(--heading-lrg));
+		font-size: clamp(var(--subheading-lrg), 10vw , var(--heading-lrg));
 		letter-spacing: 0.1em;
 		display: inline-block;
 		/* so that rotate works on an inline element */
@@ -259,7 +259,7 @@ nav.articles {
 		font-size: var(--references);
 		color: var(--primary-black);
 		text-decoration-line: none;
-		box-shadow: 0 0.2rem 0.4rem rgb(0 0 0/20%);
+		  
 
 		@media (width > 768px) {
 			font-size: var(--content);
@@ -320,7 +320,6 @@ nav {
 
 	details {
 		background-color: var(--accent-pink);
-		/* background-color: var(--stickynote); */
 		margin-block-start: var(--section-spacing);
 		padding: var(--paragraph-spacing);
 		font-family: var(--accent-typeface);
@@ -362,6 +361,10 @@ nav {
 			margin: 0;
 			display: inline-block;
 			rotate: -1deg;
+
+			@media (width> 768px) {
+			font-size: calc(1.5*var(--content));
+			}
 		}
 
 		&[open] .triangle {
@@ -390,6 +393,7 @@ nav {
 			inset-block-start: -0.9rem;
 			inset-inline-start: 9rem;
 				/* https://typography-interaction-2627.github.io/topic/box-model/#absolute */
+				/* The little grey tape stays exactly where it is regardless of the size of the paper below */
 		}
 	}
 }
