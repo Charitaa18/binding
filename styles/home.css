@@ -216,7 +216,6 @@ section {
 	&.reinfurt {
 		background-color: var(--pastel-purple);
 	} */
-	
 
 	&::after {
 			content: "";
@@ -274,6 +273,36 @@ section {
 		background-color: var(--pastel-green);
 		padding: var(--paragraph-spacing);
 		position: relative;
+	}
+
+	&.cross .section-number,
+	&.cross .divider-title,
+	&.cross .divider-more {
+		background-color: var(--pastel-green);
+	}
+
+	&.swanson .section-number,
+	&.swanson .divider-title,
+	&.swanson .divider-more {
+		background-color: var(--pastel-yellow);
+	}
+
+	&.reinfurt .section-number,
+	&.reinfurt .divider-title,
+	&.reinfurt .divider-more {
+		background-color: var(--pastel-purple);
+	}
+
+	.divider-more {
+		padding-block-start: var(--base-spacing);
+		padding-block-end: var(--paragraph-spacing);
+		padding-inline: var(--paragraph-spacing);
+
+		@media (width > 768px) {
+			a:hover {
+			background-color: var(--pastel-purple);
+			}
+		}
 	}
 
 	h2 {
