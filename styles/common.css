@@ -542,6 +542,10 @@ li.reference {
 	gap: var(--paragraph-spacing);
 	align-items: center;
 	justify-content: center;
+	position: sticky;
+	inset: 0;
+	/* inset-block-start: var(--section-spacing); */
+	background-color: var(--background-opt1);
 
 	.section-number {
 		font-size: clamp(var(--subheading-xsm), 6vw , var(--subheading-lrg));
@@ -762,6 +766,7 @@ li.reference {
 	display: flex;
 	justify-content: space-evenly;
 	overflow: hidden;
+		/* https://typography-interaction-2627.github.io/topic/advanced-css/#overflow */
 
 	@media (width > 768px) {
 		inset: 0;
@@ -773,8 +778,6 @@ li.reference {
 		row-gap: var(--holesgap);
 		/* margin-block-start: var(--divider-spacing); */
 		margin-block-start: var(--holesgap);
-		flex-shrink: 0;
-			/* https://typography-interaction-2627.github.io/topic/flexbox/#flex-grow-flex-shrink */
 	}
 
 	span {
@@ -785,6 +788,8 @@ li.reference {
 		box-shadow: inset 0 0.3rem 0.5rem rgb(0 0 0/20%);
 			/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow */
 			/* The inset makes it an inner shadow so it looks like a hole */
+		flex-shrink: 0;
+			/* https://typography-interaction-2627.github.io/topic/flexbox/#flex-grow-flex-shrink */
 		&:nth-child(n + 11) {
 			display: none;
 
