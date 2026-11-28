@@ -761,6 +761,7 @@ li.reference {
 	inset-inline: var(--base-spacing);
 	display: flex;
 	justify-content: space-evenly;
+	overflow: hidden;
 
 	@media (width > 768px) {
 		inset: 0;
@@ -771,7 +772,9 @@ li.reference {
 		justify-content: flex-start;
 		row-gap: var(--holesgap);
 		/* margin-block-start: var(--divider-spacing); */
-		margin-block: var(--holesgap);
+		margin-block-start: var(--holesgap);
+		flex-shrink: 0;
+			/* https://typography-interaction-2627.github.io/topic/flexbox/#flex-grow-flex-shrink */
 	}
 
 	span {
@@ -787,6 +790,7 @@ li.reference {
 
 			@media (width > 768px) {
 				display: block;
+				/* flex-shrink: 0; */
 			}
 		}
 	}
