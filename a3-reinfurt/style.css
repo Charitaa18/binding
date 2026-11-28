@@ -58,7 +58,7 @@ mark {
 	}
 
 	@media (width > 768px) {
-		p:hover mark {
+		p:hover & {
 		background-color: var(--pastel-purple);
 		}
 	}

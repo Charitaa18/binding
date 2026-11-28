@@ -259,7 +259,7 @@ nav.articles {
 		font-size: var(--references);
 		color: var(--primary-black);
 		text-decoration-line: none;
-		  
+
 
 		@media (width > 768px) {
 			font-size: var(--content);
@@ -755,6 +755,7 @@ li.reference {
 }
 
 .holes {
+	--holesgap: 15rem;
 	position: absolute;
 	inset-block-start: var(--paragraph-spacing);
 	inset-inline: var(--base-spacing);
@@ -766,7 +767,11 @@ li.reference {
 		flex-direction: column;
 		inset-inline-start: -4rem;
 		inset-inline-end: auto;
-		justify-content: space-evenly;
+		/* justify-content: space-evenly; */
+		justify-content: flex-start;
+		row-gap: var(--holesgap);
+		/* margin-block-start: var(--divider-spacing); */
+		margin-block: var(--holesgap);
 	}
 
 	span {
